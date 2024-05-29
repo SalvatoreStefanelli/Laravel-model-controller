@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Guest\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,3 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'index']) ->name('home');
+
+Route::get('/movies', [PageController::class, 'movies']) ->name('movies');
+
+Route::get('/characters', [PageController::class, 'characters']) ->name('characters');
+
+Route::get('/app', function () {
+    return view ('layouts.app');
+});
+
+
